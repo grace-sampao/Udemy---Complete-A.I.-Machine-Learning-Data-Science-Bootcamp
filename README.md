@@ -48,6 +48,18 @@ I successfully implemented this as follows:
 car_sales = pd.read_csv('../../data/assignments/car-sales.csv')
 ```
 
+**2. Writing a `.csv` file to a new or nested folder**
+
+This was done using [Pathlib](https://docs.python.org/3/library/pathlib.html).
+
+```python
+# Export the DataFrame you created to a .csv file
+from pathlib import Path
+
+filepath = Path('../../data/assignments/car-sales-export.csv')
+filepath.parent.mkdir(parents=True, exist_ok=True)
+df.to_csv(filepath)
+```
 
 ## 👩🏽‍💻 Author
 
