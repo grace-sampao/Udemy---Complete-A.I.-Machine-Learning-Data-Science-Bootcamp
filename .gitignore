@@ -3,3 +3,7 @@
 env/
 notebooks/lessons/
 data/lessons/
+
+.DS_Store
+data/.DS_Store
+data/assignments/.DS_Store
