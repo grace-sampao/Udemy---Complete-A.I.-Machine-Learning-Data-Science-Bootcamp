@@ -1,5 +1,5 @@
 *.docx
 
-./env/
-./notebooks/lessons
-./data/lessons
+env/
+notebooks/lessons/
+data/lessons/
