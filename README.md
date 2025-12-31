@@ -5,14 +5,14 @@ This repository contains my solutions to the assignments in the [Complete A.I. &
 ## 🧭 Table of contents
 
 - [🎓 Assignments](#🎓-assignments)
-  - [Assignment 01: Pandas Practice 🐼](#assignment-01:-pandas-practice-🐼)
+  - [Assignment 01 - Pandas Practice 🐼](#assignment-01---pandas-practice-🐼)
 - [🛠️ My process](#🛠️my-process)
   - [What I learned 🧠](#what-i-learned-🧠)
 - [👩🏽‍💻 Author](#👩🏽‍💻-author)
 
 ## 🎓 Assignments
 
-### Assignment 01: Pandas Practice 🐼
+### Assignment 01 - Pandas Practice 🐼
 
 [View](./notebooks/assignments/pandas-exercises.ipynb) the jupyter notebook file.
 
