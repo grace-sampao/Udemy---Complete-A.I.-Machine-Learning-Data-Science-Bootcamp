@@ -1,7 +1,59 @@
-# 🕸️ Udemy - Complete A.I. & Machine Learning, Data Science Bootcamp 🚀
+# 🎉 Udemy - Complete A.I. & Machine Learning, Data Science Bootcamp
 
 This repository contains my solutions to the assignments in the [Complete A.I. & Machine Learning, Data Science Bootcamp](https://www.udemy.com/share/102vAM3@KZ8PqghamqSnQXbmdDi9hdesg5DhYerlgHZ3CWmdWEp_7ewAETJsRRN-O9NMA_Rm/) on [Udemy](https://www.udemy.com/) by [Andrei Neagoie](https://www.udemy.com/user/andrei-neagoie/) and [Daniel Bourke](https://www.mrdbourke.com/).
 
 ## 🧭 Table of contents
 
-- [Assignment 01: Pandas Practice 🐼](#assignment-01:-pandas-practice-🐼)
+- [🎓 Assignments](#🎓-assignments)
+  - [Assignment 01: Pandas Practice 🐼](#assignment-01:-pandas-practice-🐼)
+- [🛠️ My process](#🛠️my-process)
+  - [What I learned 🧠](#what-i-learned-🧠)
+- [👩🏽‍💻 Author](#👩🏽‍💻-author)
+
+## 🎓 Assignments
+
+### Assignment 01: Pandas Practice 🐼
+
+[View](./notebooks/assignments/pandas-exercises.ipynb) the jupyter notebook file.
+
+## 🛠️ My process
+
+### What I learned 🧠
+
+**1. File Path Command**
+
+In order to import the `car-sales.csv` file into a notebook, I had initially referenced the file as follows:
+
+```python
+# Import "../data/car-sales.csv" and turn it into a DataFrame
+car_sales = pd.read_csv('.../data/assignments/car-sales.csv')
+car_sales
+```
+
+This resulted in a `FileNotFoundError` when running the cell.
+
+This was because I had used the `.../` prefix which is not a standard path command in programming.
+
+A solution was to use the *"Two Dots"* rule which in file systems, navigates levels using two dots (..), not three.
+
+| Prefix | Location |
+| :--- | :--- |
+| `./` | Current folder |
+| `../` | Go up one level |
+| `../../` | Go up two levels |
+
+I successfully implemented this as follows:
+
+```python
+car_sales = pd.read_csv('../../data/assignments/car-sales.csv')
+```
+
+
+## 👩🏽‍💻 Author
+
+| Platform | Link |
+| :--- | :--- |
+| **Blog** | [https://grace-sampao.github.io](https://grace-sampao.github.io) |
+| **LinkedIn** | [Grace Sampao](https://www.linkedin.com/grace-sampao) |
+| **X** | [@grace_sampao](https://x.com/grace_sampao) |
+| **Email** | sampaograce@gmail.com |
