@@ -61,6 +61,135 @@ filepath.parent.mkdir(parents=True, exist_ok=True)
 df.to_csv(filepath)
 ```
 
+**3. `.loc[]` vs. `.iloc[]`**
+
+[`.loc[]`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html#pandas.DataFrame.loc) is primarily label based.
+
+```python
+df = pd.DataFrame(
+  [[1, 2], [4, 5], [7, 8]],
+  index=['cobra', 'viper', 'sidewinder'],
+  columns=['max_speed', 'shield']
+)
+df
+```
+
+|   | max_speed | shield |
+| :--- | ---: | ---: |
+| cobra | 1 | 2 |
+| viper | 4 | 5 |
+| sidewinder | 7 | 8 |
+
+<br>
+
+A single label returns the row as a Series:
+
+```python
+df.loc['viper']
+```
+|   |   |
+| :--- | ---: |
+| max_speed | 4 |
+| shield | 5 |
+
+<br>
+
+A list of labels where using `[[]]` returns a DataFrame:
+
+```python
+df.loc[['viper', 'sidewinder']]
+```
+
+|   | max_speed | shield |
+| :--- | ---: | ---: |
+| viper | 4 | 5 |
+| sidewinder | 7 | 8 |
+
+<br>
+
+Single label for row and column:
+
+```python
+df.loc['cobra', 'shield']
+```
+
+```bash
+2
+```
+
+<br><br>
+
+[`.iloc[]`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html#pandas.DataFrame.iloc) is primarily integer position based indexing (from `0` to `length-1`) for selection by position.
+
+```python
+mydict = [
+  {'a': 1, 'b': 2, 'c': 3, 'd': 4},
+  {'a': 100, 'b': 200, 'c': 300, 'd': 400},
+  {'a': 1000, 'b': 2000, 'c': 3000, 'd': 4000}
+]
+df = pd.DataFrame(mydict)
+df
+```
+
+|   | a | b | c | d |
+| --- | ---: | ---: | ---: | ---: |
+| 0 | 1 | 2 | 3 | 4 |
+| 1 | 100 | 200 | 300 | 400|
+| 2 | 1000 | 2000 | 3000| 4000 |
+
+<br>
+
+Indexing just the rows:
+  - With a scalar integer
+
+  ```python
+  df.iloc[0]
+  ```
+
+  |   |   |
+  | :--- | ---: |
+  | a | 1 |
+  | b | 2 |
+  | c | 3 |
+  | d | 4 |
+
+  <br>
+
+  - With a list of integers
+
+  ```python
+  df.iloc[[0]]
+  ```
+
+  |   | a | b | c | d |
+  | :--- | ---: | ---: | ---: | ---: |
+  | 0 | 1 | 2 | 3 | 4 |
+
+  <br>
+
+  ```python
+  df.iloc[[0, 1]]
+  ```
+
+  |   | a | b | c | d |
+  | :--- | ---: | ---: | ---: | ---: |
+  | 0 | 1 | 2 | 3 | 4 |
+  | 1 | 100 | 200 | 300 | 400 |
+
+  <br>
+
+  - With a slice object
+
+  ```python
+  df.iloc[:3]
+  ```
+
+  |   | a | b | c | d |
+  | :--- | ---: | ---: | ---: | ---: |
+  | 0 | 1 | 2 | 3 | 4 |
+  | 1 | 100 | 200 | 300 | 400 |
+  | 2 | 1000 | 2000 | 3000 | 4000 |
+
 ## 👩🏽‍💻 Author
 
 | Platform | Link |
